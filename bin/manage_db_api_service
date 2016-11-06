@@ -21,7 +21,7 @@ ERROR_LOG_FILE=$LOG_BASE/error_log.txt
 
 JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-1.8.0.101-3.b13.24.amzn1.x86_64
 VM_ARGUMENTS=" -Dconfig.base=$CONFIG_BASE -Dvertx.logger-delegate-factory-class-name=io.vertx.core.logging.Log4jLogDelegateFactory -Dlog4j.configuration=file:$CONFIG_BASE/log4j.xml"
-PROGRAM_ARGUMENTS="io.vertx.core.Starter run com.techstomach.justdental.application.AppStarterVerticle -conf $CONFIG_BASE/db-api-service.json"
+PROGRAM_ARGUMENTS="io.vertx.core.Launcher run com.techstomach.justdental.application.vertx.AppStarterVerticle -conf $CONFIG_BASE/db-api-service.json"
 
 for i in `ls $SCRIPT_BIN_DIR/../lib/*.jar`
 do

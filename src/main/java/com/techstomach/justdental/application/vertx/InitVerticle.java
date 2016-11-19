@@ -1,6 +1,8 @@
 package com.techstomach.justdental.application.vertx;
 
+import com.techstomach.justdental.application.handlers.CreatePatientCalendar;
 import com.techstomach.justdental.application.handlers.MonitorServiceStatus;
+import com.techstomach.justdental.application.handlers.PatientRegister;
 import com.techstomach.justdental.handles.ConfigHandle;
 import com.techstomach.justdental.handles.DbHandle;
 import com.techstomach.justdental.model.enums.ServiceState;
@@ -9,6 +11,8 @@ import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
+
+import java.util.List;
 
 public class InitVerticle extends AbstractVerticle {
 
@@ -73,7 +77,15 @@ public class InitVerticle extends AbstractVerticle {
         router.route().handler(BodyHandler.create());
 
         MonitorServiceStatus monitorServiceStatus = new MonitorServiceStatus(vertx);
+        CreatePatientCalendar createPatientCalendar = new CreatePatientCalendar(vertx);
+
+        PatientRegister patientRegister = new PatientRegister(vertx);
+
+
         router.get("/monitor/service/status").handler(monitorServiceStatus);
+        router.post("/calendar/patient/create").handler(createPatientCalendar);
+
+        router.post("/patient/register").handler(patientRegister);
 
         log.info("### starting http server on hostname " + hostname + " and port " + port);
         vertx.createHttpServer().requestHandler(router::accept).listen(port, handler ->{

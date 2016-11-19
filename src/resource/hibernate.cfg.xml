@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">admin</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/jd_database</property>
+        <property name="hibernate.connection.username">jd_admin</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <mapping class="com.techstomach.justdental.model.schema.CountryDb" />
+        <mapping class="com.techstomach.justdental.model.schema.VitalsDb" />
+        <mapping class="com.techstomach.justdental.model.schema.PatientCheckinDb" />
+        <mapping class="com.techstomach.justdental.model.schema.LocationDb" />
+        <mapping class="com.techstomach.justdental.model.schema.PatientDb" />
+        <mapping class="com.techstomach.justdental.model.schema.UserDb" />
+        <mapping class="com.techstomach.justdental.model.schema.AddressDb" />
+        <mapping class="com.techstomach.justdental.model.schema.EmergencyContactDb" />
+        <mapping class="com.techstomach.justdental.model.schema.FeedchartDb" />
+        <mapping class="com.techstomach.justdental.model.schema.SurgeryStaffDb" />
+        <mapping class="com.techstomach.justdental.model.schema.SurgeryDb" />
+        <mapping class="com.techstomach.justdental.model.schema.IntakeChartDb" />
+        <mapping class="com.techstomach.justdental.model.schema.NoteDb" />
+        <mapping class="com.techstomach.justdental.model.schema.OutputChartDb" />
+        <mapping class="com.techstomach.justdental.model.schema.PatientAllergyDb" />
+        <mapping class="com.techstomach.justdental.model.schema.AllergyDb" />
+        <mapping class="com.techstomach.justdental.model.schema.PatientImmunizationDb" />
+        <mapping class="com.techstomach.justdental.model.schema.ImmunizationDb" />
+        <mapping class="com.techstomach.justdental.model.schema.PatientMedicationDb" />
+        <mapping class="com.techstomach.justdental.model.schema.PatientProblemDb" />
+        <mapping class="com.techstomach.justdental.model.schema.MedicationDb" />
+        <mapping class="com.techstomach.justdental.model.schema.ProblemDb" />
+        <mapping class="com.techstomach.justdental.model.schema.TemplateDb" />
+        <mapping class="com.techstomach.justdental.model.schema.NoteTemplateCategoryDb" />
+        <mapping class="com.techstomach.justdental.model.schema.RoleDb" />
+
+
+    </session-factory>
+</hibernate-configuration>

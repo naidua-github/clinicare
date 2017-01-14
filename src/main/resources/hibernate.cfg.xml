@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">jd_admin</property>
+        <!--<property name="hibernate.connection.url">jdbc:mysql://localhost:3306/openehs_database</property>-->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/OpenEHS_database?zeroDateTimeBehavior=convertToNull</property>
+        <property name="hibernate.connection.username">jd_admin</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.requireSSL">false</property>
+
+        <mapping class="com.techstomach.justdental.model.schema.Appointment" />
+        <mapping class="com.techstomach.justdental.model.schema.AppUsers" />
+        <mapping class="com.techstomach.justdental.model.schema.AuditAppUsers" />
+        <mapping class="com.techstomach.justdental.model.schema.AuditClinic" />
+        <mapping class="com.techstomach.justdental.model.schema.AuditPatient" />
+        <mapping class="com.techstomach.justdental.model.schema.AuditRole" />
+        <mapping class="com.techstomach.justdental.model.schema.Clinic" />
+        <mapping class="com.techstomach.justdental.model.schema.Clinicdoctor" />
+        <mapping class="com.techstomach.justdental.model.schema.Clinicservicemap" />
+        <mapping class="com.techstomach.justdental.model.schema.ClinicservicemapId" />
+        <mapping class="com.techstomach.justdental.model.schema.Invoice" />
+        <mapping class="com.techstomach.justdental.model.schema.Invoiceitem" />
+        <mapping class="com.techstomach.justdental.model.schema.InvoiceitemId" />
+        <mapping class="com.techstomach.justdental.model.schema.Patient" />
+        <mapping class="com.techstomach.justdental.model.schema.PatientCheckin" />
+        <mapping class="com.techstomach.justdental.model.schema.Patientdiagnosis" />
+        <mapping class="com.techstomach.justdental.model.schema.PatientMedication" />
+        <mapping class="com.techstomach.justdental.model.schema.Problem" />
+        <mapping class="com.techstomach.justdental.model.schema.Role" />
+        <mapping class="com.techstomach.justdental.model.schema.Service" />
+        <mapping class="com.techstomach.justdental.model.schema.Userlogin" />
+        <mapping class="com.techstomach.justdental.model.schema.UserloginId" />
+        <mapping class="com.techstomach.justdental.model.schema.Role" />
+
+
+    </session-factory>
+</hibernate-configuration>
